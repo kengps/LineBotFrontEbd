@@ -1,4 +1,7 @@
+const { handleFollow } = require("./handle-follow");
 const { handleMessage } = require("./handle-message");
+
+
 
 // event handler
 exports.handleEvent = async (event) => {
@@ -28,7 +31,7 @@ exports.handleEvent = async (event) => {
       console.log("postback");
       break;
     case "follow":
-      console.log('มีคนติดตาม / เลิก block คือ : ' + event.source.userId);
+        handleFollow(event);
       break;
     case "unfollow":
       console.log('มีคน block / เลิกเป็นเพื่อนแล้ว')
