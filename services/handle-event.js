@@ -1,7 +1,6 @@
 const { handleFollow } = require("./handle-follow");
 const { handleMessage } = require("./handle-message");
-
-
+const { handleUnFollow } = require("./handle-unfollow");
 
 // event handler
 exports.handleEvent = async (event) => {
@@ -31,10 +30,11 @@ exports.handleEvent = async (event) => {
       console.log("postback");
       break;
     case "follow":
-        handleFollow(event);
+      handleFollow(event);
       break;
     case "unfollow":
-      console.log('มีคน block / เลิกเป็นเพื่อนแล้ว')
+      // console.log('มีคน block / เลิกเป็นเพื่อนแล้ว')
+      handleUnFollow(event);
       break;
     default:
       throw new Error("Unknown event " + JSON.stringify(event));

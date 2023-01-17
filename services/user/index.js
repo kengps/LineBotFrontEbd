@@ -22,7 +22,7 @@ exports.deleteUser = async (userId) => {
 
 //* การ Update
 
-exports.updateUser = async (userId, isActive) => {
+exports.updateIsActiveUser = async (userId, isActive) => {
   return await User.update(
     {
       is_active: isActive,
