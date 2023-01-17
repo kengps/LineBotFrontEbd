@@ -1,8 +1,13 @@
+const { client } = require("../config/line");
 
-exports.handleFollow = (event)=>{
 
- //const userId = event;
+exports.handleFollow = async (event)=>{
+  const userId = event.source.userId
 
- console.log("userId คือ ", event.source);
+  console.log("userId คือ ", userId);
+
+   const profile = await client.getProfile(userId);
+
+   console.log(profile);
 }
 
