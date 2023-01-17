@@ -1,17 +1,5 @@
 const { client } = require("../config/line");
-<<<<<<< HEAD
 
-
-exports.handleFollow = async (event)=>{
-  const userId = event.source.userId
-
-  console.log("userId คือ ", userId);
-
-   const profile = await client.getProfile(userId);
-
-   console.log(profile);
-}
-=======
 const userService = require("./user/index");
 
 exports.handleFollow = async (event) => {
@@ -22,7 +10,7 @@ exports.handleFollow = async (event) => {
   const profile = await client.getProfile(userId);
 
   // console.log(profile);
->>>>>>> cb3acbb6795adcb9a788a059ac102808b9742307
+
 
   //insert profile to table
   const isExist = await userService.isActiveUser(userId);
