@@ -1,21 +1,24 @@
 const { handleFollow } = require("./handle-follow");
+const { handleImage } = require("./handle-image");
 const { handleMessage } = require("./handle-message");
 const { handleUnFollow } = require("./handle-unfollow");
 
+
 // event handler
-exports.handleEvent = async (event) => {
+exports.handleEvent =  (event) => {
   // console.log(event.message.type);
   switch (event.type) {
     case "message":
       switch (event.message.type) {
         case "text":
-          await handleMessage(event);
+           handleMessage(event);
           break;
         case "image":
-          console.log("image message");
+          handleImage(event)
+
           break;
         case "location":
-          console.log("location message");
+          console.log("location message" ,event);
           break;
         case "sticker":
           console.log("sticker message");
