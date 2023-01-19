@@ -33,8 +33,8 @@ exports.createRichMenuUser = async () => {
           height: 843,
         },
         action: {
-          type: "uri",
-          uri: "https://facebook.com",
+          type: "message",
+          text: "ใบแจ้งซ่อมของฉัน",
         },
       },
       {

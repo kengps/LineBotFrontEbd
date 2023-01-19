@@ -1,7 +1,9 @@
 const config = require("../config/line");
 const { botSendCamera } = require("./bot-uer-step/1-bot-send-camera");
-const {
-  deleteImageWhenUnCompleted,deleteRepairFormUnCompleted,} = require("./repair");
+const {deleteImageWhenUnCompleted,deleteRepairFormUnCompleted, findAllRepairFormByUser,} = require("./repair");
+const { sendRepairFormUser } = require("./send-repairform-user");
+
+
 
 exports.handleMessage = async (event) => {
   let msg;
@@ -16,6 +18,8 @@ exports.handleMessage = async (event) => {
     await deleteImageWhenUnCompleted(userId);
     await deleteRepairFormUnCompleted(userId);
     msg = { type: "text", text: "ขอบคุณคร้าบบบบ ที่มาใช้บริการ" };
+  }else if(msgFormUser === "ใบแจ้งซ่อมของฉัน") {
+    msg =  await  sendRepairFormUser();
   } else {
     msg = {
       type: "text",

@@ -5,7 +5,7 @@ const uuid = require("uuid");
 const { botSendLocation } = require("./bot-uer-step/2-bot-send-location");
 const { botSendCamera } = require("./bot-uer-step/1-bot-send-camera");
 const { client } = require("../config/line");
-//const { createRepairFrom } = require("./repair");
+const { createRepairFrom } = require("./repair");
 
 exports.handleImage = async (event) => {
   let msg;

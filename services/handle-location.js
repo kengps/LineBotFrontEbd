@@ -1,6 +1,6 @@
 const {client} = require('../config/line');
 const { botSendRepairDetail } = require('./bot-uer-step/3-bot-send-repair-detail');
-//const { updateRepairFrom } = require('./repair');
+const { updateRepairFrom } = require('./repair');
 
 
 exports.handleLocation = async (event) =>{
@@ -13,7 +13,7 @@ exports.handleLocation = async (event) =>{
             location: location,
             repair_status: 0,
         }
-        //  await updateRepairFrom(repairId, repairDa ta);
+          await updateRepairFrom(repairId, repairData);
          // send repair detail
         let msg = botSendRepairDetail();
 
