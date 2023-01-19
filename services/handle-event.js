@@ -1,6 +1,8 @@
 const { handleFollow } = require("./handle-follow");
 const { handleImage } = require("./handle-image");
+const { handleLocation } = require("./handle-location");
 const { handleMessage } = require("./handle-message");
+const { handlePostback } = require("./handle-postback");
 const { handleUnFollow } = require("./handle-unfollow");
 
 
@@ -18,7 +20,7 @@ exports.handleEvent =  (event) => {
 
           break;
         case "location":
-          console.log("location message" ,event);
+          handleLocation(event);
           break;
         case "sticker":
           console.log("sticker message");
@@ -30,7 +32,7 @@ exports.handleEvent =  (event) => {
       }
       break;
     case "postback":
-      console.log("postback");
+      handlePostback(event);
       break;
     case "follow":
       handleFollow(event);
