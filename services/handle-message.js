@@ -19,7 +19,7 @@ exports.handleMessage = async (event) => {
     await deleteRepairFormUnCompleted(userId);
     msg = { type: "text", text: "ขอบคุณคร้าบบบบ ที่มาใช้บริการ" };
   }else if(msgFormUser === "ใบแจ้งซ่อมของฉัน") {
-    msg =  await  sendRepairFormUser();
+    msg =  await  sendRepairFormUser(event);
   } else {
     msg = {
       type: "text",
