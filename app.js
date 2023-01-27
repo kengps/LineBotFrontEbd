@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'mms-frontend')));
 app.use('/line', lineRouter); // http://localhost:4000/line
 
 
-app.get('/mms-frontend', (req,res) =>{
+app.get('/mms-frontend/*', (req,res) =>{
     res.sendFile(path.join(__dirname , "mms-frontend" , 'index.html'))
 })
 

@@ -70,7 +70,7 @@ exports.createRichMenuUser = async () => {
         },
         action: {
           type: "uri",
-          uri: "https://hotmail.com",
+          uri: process.env.LIFF_URL,
         },
       },
       {
